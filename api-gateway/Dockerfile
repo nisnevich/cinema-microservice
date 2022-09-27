@@ -12,6 +12,7 @@ WORKDIR $HOME/app
 
 RUN chmod +x /usr/local/bin/dumb-init && \
     npm cache clean && \
+    npm i -S dockerode --silent && \
     npm install --silent --progress=false --production
 
 CMD ["dumb-init", "npm", "start"]
